@@ -26,7 +26,7 @@ List<charts.Series<LinearData, int>> _createSampleData(
 
   for (int i = 0; i < responseData.length; i++) {
     actualCount.add(responseData[i]["actual"]["student_count"]);
-    estimateCount.add(responseData[i]["actual"]["student_count"]);
+    estimateCount.add(responseData[i]["estimate"]["student_count"]);
   }
 
   print(actualCount);
@@ -47,14 +47,14 @@ List<charts.Series<LinearData, int>> _createSampleData(
   return [
     new charts.Series<LinearData, int>(
       id: 'yaxis',
-      colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
+      colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
       domainFn: (LinearData yaxis, _) => yaxis.xaxis,
       measureFn: (LinearData yaxis, _) => yaxis.yaxis,
       data: data,
     ),
     new charts.Series<LinearData, int>(
       id: 'yaxis2',
-      colorFn: (_, __) => charts.MaterialPalette.red.shadeDefault,
+      colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
       domainFn: (LinearData yaxis, _) => yaxis.xaxis,
       measureFn: (LinearData yaxis, _) => yaxis.yaxis,
       data: data2,
